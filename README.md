@@ -2,4 +2,4 @@
 Зарплатный калькулятор
 
 
-(django-calc/title.png)
+![Скриншот калькулятора](django-calc/title.png)
