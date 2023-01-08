@@ -1,0 +1,66 @@
+{% extends "calculator/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container-fluid d-flex justify-content-center align-items-center background">
+    <div class="row">
+        <div class="container-xll main">
+            <form class="main_form" action="{% url 'main_calc:main_calc' %}" method="post">
+                <h1 class="text-center">Калькулятор зарплаты</h1>
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="row d-flex align-items-center">
+                    <div class="col text-center">
+                        <div class="btn_div">
+                            <input type="Submit" name="submit" value="Submit" class="main_btn">
+                        </div>
+                   </div>
+                </div>
+
+                <div class="row">
+                    <div class="container-xxl text-center">
+                        {% if submitbutton == "Submit" %}
+                           <h3 class="title">С учетом вычета налогов: {{ result }}</h3>
+                        {% endif %}
+                    </div>
+                </div>
+
+
+
+                <!-- <h1 class="text-center">Калькулятор зарплаты</h1>
+
+                <h3 class="title">Введите процент от продаж (квалификация):</h3>
+                
+                    <input class="form_input" id="qualification_input" type="text" placeholder="Процент от продаж">
+
+                <h3 class="title">Введите количество продаж:</h3>
+                    <input class="form_input" id="quantity_input" type="text" placeholder="Количество продаж">
+
+                <h3 class="title">Введите сумму каждой сделки:</h3>
+                <div class="row">
+                    <div class="col">
+                        <input class="summ_contract" type="text" placeholder="Продажа №1"><br>
+                        <input class="summ_contract" type="text" placeholder="Продажа №2"><br>
+                        <input class="summ_contract" type="text" placeholder="Продажа №3"><br>
+                    </div>
+                    <div class="col">
+                        <input class="summ_contract" type="text" placeholder="Продажа №4"><br>
+                        <input class="summ_contract" type="text" placeholder="Продажа №5"><br>
+                        <input class="summ_contract" type="text" placeholder="Продажа №6"><br>
+                    </div>
+                </div>
+
+
+                <div class="row d-flex align-items-center">
+                    <div class="col text-center">
+                        <div class="btn_div">
+                        <button class="main_btn">Посчитать</button>
+                        </div>
+                   </div>
+                </div> -->
+                
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
